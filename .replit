@@ -1,0 +1,31 @@
+language = "nodejs"
+run = "cd server && npm start"
+
+[packager]
+language = "nodejs"
+
+[packager.features]
+packageSearch = true
+guessImports = true
+enabledForHosting = false
+
+[languages.javascript]
+pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
+syntax = "javascript"
+
+[languages.javascript.languageServer]
+start = "typescript-language-server --stdio"
+
+[unitTest]
+language = "nodejs"
+
+[nix]
+channel = "stable-21_11"
+
+[env]
+XDG_CONFIG_HOME = "/home/runner/.config"
+PATH = "/home/runner/.local/bin"
+npm_config_prefix = "/home/runner/.local"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", ".config"]
