@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: whiteboard-server
+    env: node
+    plan: free
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: CLIENT_URL
+        value: https://whiteboard-client-2zqgmoo4g-takeuchisous-projects.vercel.app
+      - key: PORT
+        value: 10000
